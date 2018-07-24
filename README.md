@@ -37,3 +37,23 @@ python trans.py -i './test/test.txt' -o 'result.txt'
 在本测试中使用比较少数量的文字未发现问题。
 但是不排除有问题，因为代码过于简单粗暴。
 暂定为V0.0版本。
+
+# 版本迭代
+## v0.0
+
+实现 文件到文件的翻译。
+
+## v0.1
+
+添加可以直接翻译句子新功能
+
+example
+命令行输入
+```shell
+python trans.py -s "早上好"
+```
+出来结果
+
+Good morning
+
+
