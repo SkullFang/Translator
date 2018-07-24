@@ -11,9 +11,10 @@ import time
 def main(argv):
    input= ''
    output= ''
+   sinstance=''
    translator = Translator(service_urls=['translate.google.cn'])
    try:
-      opts, args = getopt.getopt(argv,"hi:o:",["i=","o="])
+      opts, args = getopt.getopt(argv,"s:hi:o:",["s=","i=","o="])
    except getopt.GetoptError:
       print('test.py -i <inputfile> -o <outputfile>')
       sys.exit(2)
@@ -21,6 +22,11 @@ def main(argv):
       if opt == '-h':
          print('test.py -i <inputfile> -o <outputfile>')
          sys.exit()
+      elif opt in ('-s',"--s"):
+        sinstance=arg
+        print(translator.translate(
+           sinstance, src='zh-cn', dest='en').text.strip('\n'))
+        sys.exit()
       elif opt in ("-i", "--i"):
          input = arg
       elif opt in ("-o", "--o"):
